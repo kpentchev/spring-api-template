@@ -10,6 +10,6 @@
     <!-- example: -->
     <!-- <include file="db.changelog-featureA-01.xml" relativeToChangelogFile="true"/> -->
     <!-- <include file="db.changelog-featureB-02.xml" relativeToChangelogFile="true"/> -->
-
+    <include file="db.changelog-account-01.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
