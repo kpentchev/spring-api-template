@@ -26,3 +26,14 @@ Since the project uses Maven , it can be built using:
 ```mvn clean install```
 
 This will produce a launchable artifact in `target/`.
+
+## Running
+The executable jar can be started with
+
+```java -jar target/spring-api-template.jar```
+
+Alternatively, the application can also be started with
+
+```mvn spring-boot:run```
+
+For the application to run you need a `postgresql` database running and adjusting the connection string in `application.yml`.

@@ -1,0 +1,21 @@
+spring:
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.xml
+  jpa:
+    properties.hibernate.jdbc.lob.non_contextual_creation: true
+  datasource.url: jdbc:postgresql://localhost:5432/template?user=templateuser&password=12345678
+
+logging:
+  logger:
+    org.hibernate:
+      SQL: debug
+      type: trace
+
+hibernate:
+  dialect: org.hibernate.dialect.PostgreSQLDialect
+  connection.driver_class: org.postgresql.Driver
+
+management:
+  endpoints.web.exposure.include: info,health,env,httptrace,metrics,configprops
+  metrics.web.server.auto-time-requests: true
