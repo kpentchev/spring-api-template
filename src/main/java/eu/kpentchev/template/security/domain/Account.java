@@ -7,20 +7,23 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,6 +34,7 @@ import java.util.stream.Collectors;
 @EqualsAndHashCode
 @Data
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 public class Account implements UserDetails {
 
 	@Id
@@ -47,10 +51,10 @@ public class Account implements UserDetails {
 	private List<String> grantedAuthorities = new ArrayList<>();
 	
 	@CreatedDate
-	private Date created;
+	private LocalDateTime created;
 	
 	@LastModifiedDate
-	private Date lastModified;
+	private LocalDateTime updated;
 
 	public void grantAuthority(String authority) {
 		this.grantedAuthorities.add(authority);
