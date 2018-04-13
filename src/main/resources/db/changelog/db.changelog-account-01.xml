@@ -38,8 +38,8 @@
                 <constraints nullable="false" unique="true" primaryKey="true" primaryKeyName="account_ga_pk" />
             </column>
         </createTable>
-        <createIndex tableName="account" indexName="account_email_idx">
-            <column name="email" type="VARCHAR(255)" />
+        <createIndex tableName="account_granted_authorities" indexName="account_granted_authorities_ga_idx">
+            <column name="granted_authority" type="VARCHAR(255)" />
         </createIndex>
     </changeSet>
 

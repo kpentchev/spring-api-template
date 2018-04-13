@@ -1,7 +1,8 @@
-package eu.kpentchev.template.security.service;
+package eu.kpentchev.template.security.service.impl;
 
 import eu.kpentchev.template.security.domain.Account;
 import eu.kpentchev.template.security.repository.AccountRepository;
+import eu.kpentchev.template.security.service.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;

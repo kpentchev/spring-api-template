@@ -1,7 +1,7 @@
 package eu.kpentchev.template.config;
 
-import eu.kpentchev.template.security.service.DatabaseUserDetailsService;
-import eu.kpentchev.template.security.service.JWTAuthenticationService;
+import eu.kpentchev.template.security.service.impl.DatabaseUserDetailsService;
+import eu.kpentchev.template.security.service.impl.JWTAuthenticationService;
 import eu.kpentchev.template.security.service.TokenAuthenticationService;
 import eu.kpentchev.template.security.web.StatelessAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;

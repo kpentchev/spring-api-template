@@ -1,4 +1,4 @@
-package eu.kpentchev.template.security.service;
+package eu.kpentchev.template.security.service.impl;
 
 import eu.kpentchev.template.security.domain.Account;
 import eu.kpentchev.template.security.repository.AccountRepository;

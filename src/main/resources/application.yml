@@ -19,3 +19,6 @@ hibernate:
 management:
   endpoints.web.exposure.include: info,health,env,httptrace,metrics,configprops
   metrics.web.server.auto-time-requests: true
+
+security:
+  encrypt.jwt.password: ulchY5z748d$uCiFLFT752C%FBcPCk

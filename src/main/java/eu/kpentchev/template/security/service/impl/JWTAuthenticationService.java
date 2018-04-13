@@ -1,9 +1,9 @@
-package eu.kpentchev.template.security.service;
+package eu.kpentchev.template.security.service.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import eu.kpentchev.template.security.domain.Account;
+import eu.kpentchev.template.security.service.TokenAuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -37,12 +37,11 @@ public class JWTAuthenticationService implements TokenAuthenticationService {
 
 	private Mac hmac;
 
-	@Qualifier("jacksonHttpMessageConverter")
 	@Autowired
 	private MappingJackson2HttpMessageConverter mapper;
 
 	@Value("${security.encrypt.jwt.password}")
-	String secretKey;
+	private String secretKey;
 
 	@PostConstruct
 	public void init(){

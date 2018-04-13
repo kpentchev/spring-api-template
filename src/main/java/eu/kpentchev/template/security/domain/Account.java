@@ -12,6 +12,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -48,6 +49,7 @@ public class Account implements UserDetails {
 	private String password;
 
 	@ElementCollection(fetch = FetchType.EAGER)
+	@Column(name =  "granted_authority")
 	private List<String> grantedAuthorities = new ArrayList<>();
 	
 	@CreatedDate
